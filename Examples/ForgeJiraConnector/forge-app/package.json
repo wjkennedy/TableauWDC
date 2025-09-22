@@ -1,0 +1,14 @@
+{
+  "name": "forge-jira-tableau-wdc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forge backend for the Jira Tableau Web Data Connector example.",
+  "scripts": {
+    "lint": "eslint ./src --ext .js"
+  },
+  "dependencies": {
+    "@forge/api": "^2.20.0",
+    "@forge/resolver": "^1.5.4",
+    "uuid": "^9.0.0"
+  }
+}
