@@ -34,3 +34,8 @@ online [here](https://github.com/tableau/webdataconnector/tree/master).
 
     This example shows you how to use OAuth as an authentication method.
 
+-   **[Forge Jira Connector](https://github.com/tableau/webdataconnector/tree/master/Examples/ForgeJiraConnector)**
+
+    A modern reference implementation that combines a Forge backend with a WDC front-end. The Forge app impersonates the logged
+    in Jira user for every REST API request, emits audit events, and streams datasets such as issues and projects to Tableau.
+

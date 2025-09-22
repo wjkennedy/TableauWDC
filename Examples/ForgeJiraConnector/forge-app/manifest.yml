@@ -1,0 +1,25 @@
+modules:
+  http:
+    - key: jira-wdc-api
+      function: main
+      path: /wdc/{resource*}
+      method:
+        - GET
+        - POST
+  function:
+    - key: main
+      handler: index.handler
+app:
+  id: ari:cloud:ecosystem::app/<replace-with-your-app-id>
+permissions:
+  scopes:
+    - read:jira-user
+    - read:jira-work
+    - read:jira-worklog:jira
+    - read:jira-project
+    - storage:app
+  external:
+    fetch:
+      backend:
+        - https://api.atlassian.com
+        - https://your-forge-app.example.com

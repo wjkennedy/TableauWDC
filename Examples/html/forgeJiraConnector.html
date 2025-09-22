@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Forge Jira Tableau Connector</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4QrpRq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+    <script src="../js/ForgeJiraConnector.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container" style="max-width: 720px;">
+        <div class="page-header">
+            <h1>Jira Forge Connector</h1>
+            <p class="lead">
+                Authenticate with Atlassian Forge and choose a Jira dataset to make it available in Tableau.
+            </p>
+        </div>
+
+        <div id="statusContainer" class="alert alert-info" role="alert">
+            Sign in with Atlassian to begin configuring the connector.
+        </div>
+
+        <div class="btn-toolbar" style="margin-bottom: 20px;">
+            <button id="authenticateButton" type="button" class="btn btn-primary">
+                Sign in with Atlassian
+            </button>
+            <button id="disconnectButton" type="button" class="btn btn-default" style="display: none;">
+                Disconnect
+            </button>
+        </div>
+
+        <div id="configurationPanel" class="panel panel-default" style="display: none;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dataset configuration</h3>
+            </div>
+            <div class="panel-body">
+                <form id="configurationForm" class="form">
+                    <div class="form-group">
+                        <label for="datasetSelect">Dataset</label>
+                        <select id="datasetSelect" class="form-control">
+                            <option value="">Select a dataset…</option>
+                        </select>
+                        <p class="help-block" id="datasetDescription"></p>
+                    </div>
+
+                    <div id="filterContainer"></div>
+
+                    <div class="checkbox" id="auditCheckboxContainer" style="display: none;">
+                        <label>
+                            <input type="checkbox" id="auditToggle" />
+                            Enable enhanced audit logging for this extract
+                        </label>
+                        <p class="help-block">
+                            When enabled the Forge app stores row counts, filters, and refresh timestamps for compliance reviews.
+                        </p>
+                    </div>
+
+                    <button id="submitButton" type="button" class="btn btn-success">
+                        Load data in Tableau
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="errorContainer" class="alert alert-danger" role="alert" style="display: none;"></div>
+    </div>
+</body>
+</html>
